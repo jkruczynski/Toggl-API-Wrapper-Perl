@@ -215,7 +215,7 @@ sub get_clients{
 sub get_billable{
 	my ($self, $pid, $start, $end) = @_;
 	my $url = "https://toggl.com/reports/api/v2/summary.json?";
-	my $params ="grouping=projects&subgrouping=time_entries&order_field=title&order_desc=off&rounding=on&distinct_rates=Off&free=false&status=active&name=&billable=yes&calculate=time&sortDirection=asc&sortBy=title&page=1&project_ids=$pid&description=&since=$start&until=$end&period=prevMonth&with_total_currencies=1&user_agent=Toggl+New+3.50.2&workspace_id=28443&bars_count=31&subgrouping_ids=true&bookmark_token=";
+	my $params ="grouping=projects&subgrouping=time_entries&order_field=title&order_desc=off&rounding=on&distinct_rates=Off&free=false&status=active&name=&billable=yes&calculate=time&sortDirection=asc&sortBy=title&page=1&project_ids=$pid&description=&since=$start&until=$end&period=prevMonth&with_total_currencies=1&user_agent=Toggl+New+3.50.2&workspace_id=$wsid&bars_count=31&subgrouping_ids=true&bookmark_token=";
 	my $json=$self->$mk_get_request($url,$params);
 	return $json;
 }
